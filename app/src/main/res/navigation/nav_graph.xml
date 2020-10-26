@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/action_from_main_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bulletmys.bitcoin.SettingsActivity$SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/settings_activity">
+        <action
+            android:id="@+id/action_from_settings_to_main"
+            app:destination="@id/startFragment" />
+    </fragment>
+</navigation>
